@@ -1,42 +1,15 @@
-  <style>
-   #textField, #passField {
-    width: 300px; /* Ширина поля */
-    padding: 10px; /* Поля */
-    box-shadow: inset 0 1px 5px rgba(0,0,0,0.2); /* Тень внутри */
-    border: 1px solid #ccc; /* Параметры рамки */
-    color: #ff6d37; /* Цвет текста */
-    background: url(../images/user.png) no-repeat 5px 50%; /* Картинка пользователя */
-    padding-left: 30px; /* Расстояние от левого края */
-   }
+<link href="../css/authorization.css" rel="stylesheet">
 
-   #passField {
-    background: url(../images/lock.png) no-repeat 5px 50%;	 /* Картинка для поля с паролем */
-   }
+<form class="form-auth" action="passhandler.php" method="post">
+   <label class="form-auth_text" for="form-auth_text_field">Логин:</label>
+      <input class="form-auth_text_field" maxlength="25" size="40" name="login" autofocus="ON" 
+      placeholder="ВВЕДИТЕ ЛОГИН" autocomplete="off" required>
+   <label class="form-auth_pass" for="form-auth_pass_field">Пароль:</label>
+      <input class="form-auth_pass_field" type="password" maxlength="25" size="40" 
+      name="password" placeholder="ВВЕДИТЕ ПАРОЛЬ" autocomplete="off" required>
+      <input class="form-auth_showpassbtn" type="button">
+   <input class="form-auth_submitbtn" type="submit" value="Войти">
+</form>
 
-   #togglePassword {
-    background: url(../images/eye.png) no-repeat 5px 50%; /* Картинка для поля с паролем */
-   }
-   label {
-    width: 200px; /* Ширина */
-    text-align: right; /* Выравниваем по правому краю */
-    float: left; /* Выстраиваем элементы рядом */
-    margin-right: 10px; /* Расстояние от текста до текстового поля */
-    line-height: 30px; /* Выравниваем по высоте */
-   }
-   .submitField {
-    margin-left: 110px; /* Сдвигаем вправо под поля */
-   }
-  </style>
-
-  <form action="passhandler.php" method="post">
-   <p><label for="textField">Логин:</label>
-      <input maxlength="25" size="40" name="login" id="textField" autofocus="ON" placeholder="ВВЕДИТЕ ЛОГИН" autocomplete="off" required></p>
-   <p><label for="passField">Пароль:</label>
-      <input type="password" maxlength="25" size="40" name="password" id="passField" placeholder="ВВЕДИТЕ ПАРОЛЬ" autocomplete="off" required>
-      <input type="button" id="togglePassword"></p>
-
-
-   <p><input type="submit" value="Войти" class="submitField"></p>
-  </form>
-  <script type="text/javascript" src="../js/showpass.js"></script>
+<script type="text/javascript" src="../js/showpass.js"></script>
 
