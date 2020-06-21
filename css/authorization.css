@@ -1,66 +1,30 @@
-.grid-container {
-    display: grid;
-    grid-template-areas:    "grid-container_item1 grid-container_item2 grid-container_item2"
-                            "grid-container_item3 grid-container_item4 grid-container_item5"
-                            ".                    grid-container_item6 .                   ";
-    grid-gap: 3px;
-    grid-template-columns: 1fr 350px 1fr;
-}
-
-.grid-container_item1 {
-    grid-area: grid-container_item1;
-    justify-self: end;
-}
-
-.grid-container_item2 {
-    grid-area: grid-container_item2;
-}
-
-.grid-container_item3 {
-    grid-area: grid-container_item3;
-    justify-self: end;
-}
-
-.grid-container_item4 {
-    grid-area: grid-container_item4;
-}
-
-.grid-container_item5 {
-    grid-area: grid-container_item5;
-    grid-column: 2 / span 1;
-    justify-self: end;
-}
-
-.grid-container_item6 {
-    grid-area: grid-container_item6;
-    grid-column: 2 / span 1;
-    justify-self: self-end;
-}
-
 .form-auth {
-
+    display: grid;
+    grid-template-areas:    ". form-auth_textfield    ."
+                            ". form-auth_passfield    form-auth_showpassbtn"
+                            ". form-auth_submitbtn    .";
+    grid-gap: 3px;
+    grid-template-columns: auto 300px auto;
 }
 
-.form-auth_text {
 
-}
-
-.form-auth_text_field {
-    width: 350px;
+.form-auth_textfield {
+    grid-area: form-auth_textfield;
+    min-width: 300px;
     background: url(../images/user.png) no-repeat 5px 50%; 
 }
 
-.form-auth_pass {
- 
-}
-
-.form-auth_pass_field {
-    width: 300px;
+.form-auth_passfield {
+    grid-area: form-auth_passfield;
+    min-width: 250px;
     background: url(../images/lock.png) no-repeat 5px 50%;	
 }
 
 .form-auth_showpassbtn {
-    width: 46px;
+    grid-area: form-auth_showpassbtn;
+    grid-column: 2 / span 1;
+    justify-self: end;
+    min-width: 46px;
     padding: 10px; 
     box-shadow: inset 0 1px 5px rgba(0,0,0,0.2); 
     border: 1px solid #ccc; 
@@ -70,23 +34,21 @@
 }
 
 .form-auth_submitbtn {
-    margin-left: 210px; 
-    width: 350px;
+    grid-area: form-auth_submitbtn;
+    grid-column: 2 / span 1;
+    justify-self: self-end;
+    /* margin-left: 210px;  */
+    width: 300px;
     height: 40px;
     background-color: lightskyblue;
     border: black;    
 }
 
-.form-auth_text_field, .form-auth_pass_field {
+.form-auth_textfield, .form-auth_passfield {
     padding: 10px; 
     box-shadow: inset 0 1px 5px rgba(0,0,0,0.2); 
     border: 1px solid #ccc; 
     color: #200900; 
     padding-left: 30px; 
-}
-
-
-   label {
-    line-height: 30px;
 }
 

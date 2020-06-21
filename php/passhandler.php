@@ -26,7 +26,9 @@
 				if ($password === $row_password[0]) {
 					$_SESSION['admin'] = true;
 					header("HTTP/1.1 301 Moved Permanently");
-					header("Location: ".$address_site."/php/ok.php");
+					header("Location: ok.php");
+
+					//".$address_site."/php/
 					
 				} else {
 
@@ -35,8 +37,9 @@
 
 					//Возвращаем пользователя на страницу регистрации
 					header("HTTP/1.1 301 Moved Permanently");
-					header("Location: ".$address_site."/php/notok.php");
+					header("Location: notok.php");
 
+					//".$address_site."/php/
 
 					//Закрываем подключения и останавливаем скрипт
 					$query_select_password->close();
