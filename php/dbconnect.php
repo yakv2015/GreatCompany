@@ -6,7 +6,7 @@
 
     $opts = array(
        'user'    => 'root',
-       'pass'    => '',
+       'pass'    => 'root',
        'db'      => 'great_comp',
        'charset' => 'utf8mb4'
      );
@@ -19,5 +19,5 @@
        }
 
     //Для удобства, добавим здесь переменную, которая будет содержать название нашего сайта
-    $address_site = "http://greatcompany";
+    $address_site = "greatcompany";
 ?>
