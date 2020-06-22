@@ -81,13 +81,16 @@ require_once($_SERVER['DOCUMENT_ROOT']."/php/dbconnect.php");
 
 </style>
 
+<!DOCTYPE html>
+<html lang="ru">
+<body>
 
-<form class="form-setuser" action="passhandler.php" method="post">
+<form class="form-setuser" action="" method="post">
     <label class="label-1" for="form-setuser_name">Имя нового пользователя</label>
-    <input class="form-setuser_name" type="text" maxlength="75" name="username" placeholder="ВВЕДИТЕ ФИО ПОЛНОСТЬЮ" autofocus="ON"  autocomplete="off" required>
+    <input class="form-setuser_name baseform" type="text" maxlength="75" name="username" placeholder="ВВЕДИТЕ ФИО ПОЛНОСТЬЮ" autofocus="ON"  autocomplete="off" required>
     <br>
     <label class="label-2" for="form-setuser_division">Подразделение</label>
-    <input list="division" class="form-setuser_division" type="text" name="userdivision" placeholder="ВВЕДИТЕ ПОДРАЗДЕЛЕНИЕ" autofocus="ON" autocomplete="off" required>
+    <input list="division" class="form-setuser_division baseform" type="text" name="userdivision" placeholder="ВВЕДИТЕ ПОДРАЗДЕЛЕНИЕ" autofocus="ON" autocomplete="off" required>
         <datalist id="division">
             <option value="Дирекция"> 
             <option value="Участок"> 
@@ -95,7 +98,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/php/dbconnect.php");
         </datalist>
     <br>
     <label class="label-3" for="form-setuser_position">Должность</label>
-        <input list="position" class="form-setuser_position" type="text" maxlength="" name="userposition" placeholder="ВВЕДИТЕ ДОЛЖНОСТЬ" autofocus="ON" autocomplete="off" required>
+        <input list="position" class="form-setuser_position baseform" type="text" maxlength="" name="userposition" placeholder="ВВЕДИТЕ ДОЛЖНОСТЬ" autofocus="ON" autocomplete="off" required>
             <datalist id="position">
                 <option value="Начальник"> 
                 <option value="Инженер"> 
@@ -103,10 +106,39 @@ require_once($_SERVER['DOCUMENT_ROOT']."/php/dbconnect.php");
             </datalist>
     <br>
     <label class="label-4" for="form-setuser_login">Логин</label>
-    <input class="form-setuser_login" type="text" maxlength="25" name="userlogin" placeholder="ВВЕДИТЕ ЛОГИН" autofocus="ON"  autocomplete="off" required>
+    <input class="form-setuser_login baseform" type="text" maxlength="25" name="userlogin" placeholder="ВВЕДИТЕ ЛОГИН" autofocus="ON"  autocomplete="off" required>
     <br>
     <label class="label-5" for="form-setuser_firstpassword">Первичный пароль</label>
-    <input class="form-setuser_firstpassword" type="password" maxlength="20" name="userpassword" placeholder="ВВЕДИТЕ ПАРОЛЬ" autocomplete="off" required>
+    <input class="form-setuser_firstpassword baseform" type="password" maxlength="20" name="userpassword" placeholder="ВВЕДИТЕ ПАРОЛЬ" autocomplete="off" required>
     <br>   
-   <input class="form-setuser_submitbtn" type="submit" name="enter" value="Внести данные в базу">
+
+   <input class="form-setuser_submitbtn" type="submit" name="enter"  onclick="writeValues()" value="Внести данные в базу">
 </form>
+</body>
+</html>
+
+<script>
+    function writeValues() {
+    
+        var userValues = document.querySelectorAll('.baseform');
+        var mas = [];
+
+        // userValues.forEach(function(userValues){
+        //     mas.push(userValues.value)
+        // });
+
+        // console.log(mas);
+
+        function save() {
+            for (var i = 0; i < userValues.length; i++) {
+            mas.push(userValues[i].value);
+            
+            }
+        
+        }
+        save(); 
+        console.log(mas);
+    }
+
+    
+</script>
