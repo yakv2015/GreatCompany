@@ -119,26 +119,18 @@ require_once($_SERVER['DOCUMENT_ROOT']."/php/dbconnect.php");
 
 <script>
     function writeValues() {
-    
-        var userValues = document.querySelectorAll('.baseform');
-        var mas = [];
-
-        // userValues.forEach(function(userValues){
-        //     mas.push(userValues.value)
-        // });
-
-        // console.log(mas);
+        let userValues = document.querySelectorAll('.baseform');
+        let userArray = [];
 
         function save() {
-            for (var i = 0; i < userValues.length; i++) {
-            mas.push(userValues[i].value);
-            
+            for (let i = 0; i < userValues.length; i++) {
+                userArray.push(userValues[i].value);
             }
-        
         }
         save(); 
-        console.log(mas);
-    }
 
-    
+    let [name, division, position, login, password] = userArray;
+
+    console.log(name);
+    }
 </script>
